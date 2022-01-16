@@ -6,6 +6,7 @@ mongoose.connect(process.env.MONGODB, {
 }, (err) => {
     if (!err) {
         console.log('MongoDB Connection Succeeded.')
+        require('./initialAdminUser');
     } else {
         console.log('Error in DB connection: ' + err)
     }

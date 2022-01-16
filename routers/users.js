@@ -1,7 +1,9 @@
 const express = require('express');
 const models = require("../models");
 const checkTokenAuth = require("../checkTokenAuth");
+const bcrypt = require("bcrypt");
 require('dotenv').config();
+
 
 var router = express.Router();
 
@@ -30,6 +32,7 @@ router.use('/addUser', checkTokenAuth,(req, res, next) => {
  });
 
 router.post('/addUser',  (req, res) => {    
+    req.body.password = bcrypt.hashSync(req.body.password, 10);
     const newUser = new models.User(
         req.body
     )

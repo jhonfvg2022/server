@@ -33,18 +33,18 @@ var userSchema = new mongoose.Schema({
     group: {
         type: String,
         required: true
-     }
-    // password: {
-    //     type: String,
-    //     required: true
-    // },
-    // photo: {
-    //     type: String
-    // },    
-    // rol: {
-    //     type: String,
-    //     required: true
-    // },
+     },
+    password: {
+        type: String,
+        required: true
+    },
+    photo: {
+        type: String
+    },    
+    rol: {
+        type: String,
+        required: true
+    }
 });
 
 module.exports.User = mongoose.model('User', userSchema);
