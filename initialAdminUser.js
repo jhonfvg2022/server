@@ -17,8 +17,7 @@ models.User.find({}, function (err, docs) {
             }
         )
         userAdmin.save((err, doc) => {
-            if (err) {
-                res.json(err.message)
+            if (err) {               
                 return console.log(err);
             }
             console.log(doc);           
