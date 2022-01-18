@@ -8,9 +8,10 @@ const app = express();
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-
 app.use('/api', loginRouter, usersRouter);
 
+
+console.log("ok");
 
 app.listen(3000, () => {
     console.log('Authentication service started on port 3000');

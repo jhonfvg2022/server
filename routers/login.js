@@ -6,7 +6,7 @@ require('dotenv').config();
 
 var router = express.Router();
 
-router.use('/login', (req, res) => {
+router.post('/login', (req, res) => {
     models.User.find({}, function (err, docs) {
         if (err) return console.log(err);
         console.log(docs);
@@ -17,7 +17,7 @@ router.use('/login', (req, res) => {
                 token
             });
         } else {
-            res.send('Username or password incorrect');
+            res.send({error:'Username or password incorrect'});
         }
     })
 });

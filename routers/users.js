@@ -19,9 +19,9 @@ router.get('/users', (req, res) => {
             res.json(err.message)
             return console.log(err);
         }
-        res.json({
+        res.json(
             users
-        });
+        );
     })
 });
 
