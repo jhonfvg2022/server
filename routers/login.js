@@ -12,7 +12,7 @@ router.post('/login', (req, res) => {
         console.log(docs);
         const user = docs.find(u => { return u.email === req.body.email && bcrypt.compareSync(req.body.password, u.password) });
         if (user) {
-            const token = jwt.sign({ email: user.email, id: user.id }, process.env.TOKEN_SECRET, { expiresIn: '1d' });
+            const token = jwt.sign({ email: user.email, rol: user.rol }, process.env.TOKEN_SECRET, { expiresIn: '1d' });
             res.json({
                 token
             });
